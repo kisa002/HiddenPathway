@@ -103,9 +103,10 @@ public class AreaDescriptionPicker : MonoBehaviour, ITangoLifecycle
         {
             if (string.IsNullOrEmpty(m_curAreaDescriptionUUID))
             {
-                AndroidHelper.ShowAndroidToastMessage("Please choose an Area Description.");
+                AndroidHelper.ShowAndroidToastMessage("탈출로를 선택해주세요!");
                 return;
             }
+            GameObject.Find("Background").SetActive(false);
         }
         else
         {
@@ -149,7 +150,7 @@ public class AreaDescriptionPicker : MonoBehaviour, ITangoLifecycle
         }
         else
         {
-            AndroidHelper.ShowAndroidToastMessage("Motion Tracking and Area Learning Permissions Needed");
+            AndroidHelper.ShowAndroidToastMessage("모션 트래킹과 공간 인식 권한이 필요합니다!");
             
             // This is a fix for a lifecycle issue where calling
             // Application.Quit() here, and restarting the application

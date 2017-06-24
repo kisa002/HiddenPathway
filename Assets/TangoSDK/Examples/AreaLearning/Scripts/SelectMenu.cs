@@ -14,7 +14,7 @@ public class SelectMenu : MonoBehaviour {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         startLearningButton = GameObject.Find("StartLearningButton");
-        gameControlPanel = GameObject.Find("GameControlPanel");
+        gameControlPanel = GameObject.Find("Canvas").transform.FindChild("GameControlPanel").gameObject;
     }
 
     private void Update() //이거 되게 비논리적이지만, 개발하기 귀차니즘...
